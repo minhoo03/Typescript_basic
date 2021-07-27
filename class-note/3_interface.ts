@@ -9,6 +9,9 @@ var minhoo: User = {
     name: '민후'
 }
 
+
+
+
 // 1. 함수에 인터페이스 활용
 function getUser(user: User) {
     console.log(user)
@@ -19,6 +22,9 @@ const sm = {
     name: 'ㅅㅁ'
 }
 getUser(sm)
+
+
+
 
 // 2. 함수의 스펙(구조)에 인터페이스를 활용
 interface SumFunction {
@@ -32,12 +38,35 @@ sum = function(a, b) {
 }
 
 
+
 // 3. 인덱싱
 interface StringArray {
     [index: number]: string
 }
 
 var arr: StringArray = ['a', 'b', 'c']
-arr[0] = 'str'
+// arr[0] = 'str'
 // var aa: StringArray = {name1: 'string'} <- index가 string이기에 false
 // var bb: StringArray = {1: 'string'} <- index가 number이기에 true
+
+
+
+// 4. 딕셔너리 패턴
+interface StringRegexDictionary {
+    // cssFile: /\.css$/,
+    [key: string]: RegExp
+}
+
+var obj: StringRegexDictionary = {
+    // css나 js 파일로 끝나는 것들
+    cssFile: /\.css$/,
+    jsFile: /\.js$/,
+}
+
+// obj['cssFile'] = /abc/   <- true
+// obj['jsFile'] = 'abc'    <- false
+
+// Ts가 -> val: string으로 추정 중
+Object.keys(obj).forEach((val) => {
+
+})
