@@ -1,10 +1,13 @@
+// type Todo = { id: number, title: string, done: boolean }
+interface Todo { id: number, title: string, done: boolean }
+
 // let todoItems: object[]
-let todoItems: { id: number, title: string, done: boolean }[]
+let todoItems: Todo[]
 
 // api
 // todoItems의 타입에 맞춰 반환값을 바꿨다
 // object[] -> { id: ... }
-function fetchTodoItems(): { id: number, title: string, done: boolean }[] {
+function fetchTodoItems(): Todo[] {
   const todos = [
     { id: 1, title: '안녕', done: false },
     { id: 2, title: '타입', done: false },
@@ -27,7 +30,7 @@ function deleteTodo(index: number): void {
   todoItems.splice(index, 1)
 }
 
-function completeTodo(index: number, todo: { id: number, title: string, done: boolean }): void {
+function completeTodo(index: number, todo: Todo): void {
   // done을 찾을 수 없던 에러는
   // Type -> object[]을 { id: num... } 으로 정했기에 사라졌다
   todo.done = true
