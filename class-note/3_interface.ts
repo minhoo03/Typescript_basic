@@ -70,3 +70,21 @@ var obj: StringRegexDictionary = {
 Object.keys(obj).forEach((val) => {
 
 })
+
+
+
+// 5. 인터페이스 확장 (상속)
+interface Person {
+    name: string;
+    age: number;
+}
+
+interface Developer extends Person {
+    language: string;
+}
+
+let minu: Developer = {
+    name: 'minu',
+    age: 19,
+    language: 'js'
+}
