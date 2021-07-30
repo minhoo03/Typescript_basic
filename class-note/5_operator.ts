@@ -14,3 +14,20 @@ function logMessage(value: string | number) {
 
 logMessage('hello')
 logMessage(100)
+
+
+
+// 특징: 모든 타입의 공통적인 멤버에만 접근 가능
+interface Developer {
+    name: string,
+    skill: string
+}
+
+interface Person {
+    name: string,
+    age: number
+}
+
+function askSomeone(someone: Developer | Person) {
+    someone.name
+}
