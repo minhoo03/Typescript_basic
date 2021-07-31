@@ -104,3 +104,20 @@ function logTextLength2<T extends LengthType>(text: T): T {
 
 logTextLength2('a')
 // logTextLength2(10) <- error (number은 기본적으로 length 제공하지 않음)
+
+// 5-3. 제네릭 타입 제한 - keyof
+interface ShoppingItem {
+    name: string,
+    price: number,
+    stock: number
+}
+
+// 상속받은 interface 멤버 변수 중 한 가지가 타입이 된다.
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
+    return itemOption
+}
+
+// error
+// getShoppingItemOption(10)
+// getShoppingItemOption<string>('a')
+getShoppingItemOption("name")
