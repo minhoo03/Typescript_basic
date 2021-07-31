@@ -1,5 +1,6 @@
 // 제네릭을 사용하기 전 인터페이스 타입 정의
 // *제네릭 적용
+// codepen - https://codepen.io/minhoo03/pen/jOmxgQb
 
 interface DropdownItem<T> {
   value: T,
@@ -49,6 +50,6 @@ emails.forEach(function (email) {
 // NOTE: 넘버 드롭 다운 아이템 추가
 numberOfProducts.forEach(product => {
   const item = createDropdownItem<number>(product)
-  const selectTag = document.querySelector('#email-dropdown');
+  const selectTag = document.querySelector('#product-dropdown');
   selectTag.appendChild(item);
 })
