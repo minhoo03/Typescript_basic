@@ -4,7 +4,9 @@
     "checkJs": true,
     "target": "es5",
     "lib": ["es2015", "dom", "dom.iterable"],
-    "noImplicitAny": false
-  },
+    "noImplicitAny": true, // any 사용해도 error 안남
+    "strict": true, // 모든 엄격한 타입 체킹
+    "strictFunctionTypes": true // 함수 타입에 대한 엄격한 확인
+    },
   "include": ["./src/**/*"]
 }
