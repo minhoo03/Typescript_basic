@@ -1,3 +1,5 @@
+// 제네릭을 사용하기 전 인터페이스 타입 정의
+
 interface Email {
   value: string,
   selected: boolean
