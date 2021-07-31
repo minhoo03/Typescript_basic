@@ -55,3 +55,24 @@ const b = logText<number>(10)
 b.toLocaleString()
 
 const c = logText<boolean>(true)
+
+
+
+
+// 4. 인터페이스에 제네릭을 선언하는 방법
+
+interface Dropdown1 {
+    value: string,
+    selected: boolean
+}
+
+// const obj1:Dropdown1 = { value: 'hi', selected: false}
+// const obj1:Dropdown1 = { value: 10, selected: false} <- Error
+
+interface Dropdown2<T> {    
+    value: T,
+    selected: boolean
+}
+
+const obj2:Dropdown2<number> = { value: 10, selected: false}
+const obj3:Dropdown2<string> = { value: '10', selected: false}
