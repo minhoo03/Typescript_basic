@@ -82,7 +82,7 @@ const obj3:Dropdown2<string> = { value: '10', selected: false}
 // 5-1. 제네릭의 타입 제한
 //   <string>을 명시해줘도 함수 자체는 무슨 타입이 올지 모르니
 //   length를 사용할 수 없다. 그래서 배열을 이용
-function logTextLength<T>(text: T[]): T[] {
+function logTextLength1<T>(text: T[]): T[] {
     console.log(text.length)
     text.forEach(text => {
         console.log(text)
@@ -90,9 +90,17 @@ function logTextLength<T>(text: T[]): T[] {
     return text
 }
 
-logTextLength<string>(['hi'])
+logTextLength1<string>(['hi'])
 
 // 5-2. 제네릭 타입 제한 - 정의된 타입 이용하기
 interface LengthType {
     length: number
 }
+// 인터페이스 상속 받음
+function logTextLength2<T extends LengthType>(text: T): T {
+    text.length
+    return text
+}
+
+logTextLength2('a')
+// logTextLength2(10) <- error (number은 기본적으로 length 제공하지 않음)
