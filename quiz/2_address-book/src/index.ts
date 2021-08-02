@@ -101,11 +101,12 @@ class AddressBook {
     this.contacts.push(contact);
   }
 
-  displayListByName() {
+  // map: 기본 배열을 이용해 새로운 배열 생성
+  displayListByName(): string[] {
     return this.contacts.map(contact => contact.name);
   }
 
-  displayListByAddress() {
+  displayListByAddress(): string[] {
     return this.contacts.map(contact => contact.address);
   }
   /* ------------------------------------------------ */
