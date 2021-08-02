@@ -42,4 +42,4 @@ if (isDeveloper(tony)) {
     console.log(tony.skill)
 } else {
     console.log(tony.age)
-}
+} 
