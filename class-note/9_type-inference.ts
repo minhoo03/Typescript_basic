@@ -40,3 +40,10 @@ let detatiledItem: DetailedDropdown<string> = {
     description: 'desc',
     tag: 'tag123'
 }
+
+
+
+
+// Best Common Type
+let arr1 = [1, 2, 3] // :number[]
+let arr2 = [1, 2, true, 'a'] // :(number | boolean | string)[] - union
